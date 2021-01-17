@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Caesar Cipher</title>
+        <meta name="viewport" content="width=device-width", initial-scale=1, maximum-scale=1, minimum-scale=1 />
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=PT+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        
+    </head>
+
+    <body>
+        <header>
+            <h1>Caesar Cipher</h1>
+        </header>
+
+        <!-- Main content -->
+        <section class="s1">
+            <div class="blocks-wrapper">
+
+                <!-- Plain Text -->
+                <div class="blocks text-block">
+                    <h3 id="plain-text-label">Plaintext</h3>
+                    <div class="block-content">
+                        <textarea class="text-stream plain-textarea" oninput="encodeText(this.value)" rows="10" data-min-rows="10" spellcheck="false" autofocus></textarea>
+                    </div>
+                </div>
+                
+                <!-- Encode/Decode shift values -->
+                <div class="blocks shift-block">
+                    <ul class="block-actions">
+                        <li class="block-action-item">
+                            <a class="block-action block-action__active" id="btn-encode" href="index.html">Encode</a>
+                        </li>
+                        <li class="block-action-item">
+                            <a class="block-action" id="btn-decode" href="decode.html">Decode</a>
+                        </li>
+                    </ul>
+
+                    <div class="block-settings">
+                        <div class="field field-number">
+                            <label class="field-label">Shift</label>
+                            <div class="field-number__field">
+                                <button class="field-number__btn" id="btn-minus">&#x2796;</button>
+                                <div class="field-number__value">
+                                    <input class="field-number__input" type="number">
+                                    <div class="field-number__display field-number__display--enabled">
+                                            <span class="field-number__display-value">7</span>
+                                            <span class="field-number__display-description">a→h</span>
+                                        </div>
+                                </div>
+                                <button class="field-number__btn" id="btn-plus">&#x2795;</button>
+                            </div>
+                        </div>
+
+                        <div class="field field-text">
+                            <label class="field-label">Alphabet</label>
+                            <div class="field-text__alphabet">
+                                <p>abcdefghijklmnopqrstuvwxyz</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ciphertext -->
+                <div class="blocks text-block">
+                    <h3 id="cipher-text-label">Ciphertext</h3>
+                    <div class="block-content">
+                        <textarea class="text-stream cipher-textarea" readonly rows="10" data-min-rows="10" spellcheck="false" autofocus></textarea>
+                    </div>
+                </div>
+            </div>   
+        </section>
+
+        <section class="s2">
+            <footer>
+                <p>*Currently only supports English language</p>
+            </footer>
+        </section>
+
+        <script type="text/javascript" src="js/autoExpand.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
+</html>

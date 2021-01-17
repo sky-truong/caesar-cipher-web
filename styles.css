@@ -1,0 +1,198 @@
+:root {
+    --platinum: #e3e3de;
+    --ivory: #f4f9e9;
+    --babyPowder: #eef0eb;
+    --indigoDye: #284b63;
+    --gunMental: #153243;
+    --label: rgb(117, 115, 115);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arimo', sans-serif;
+}
+
+header > h1 {
+    text-align: center;
+    padding: 20px;
+    background: var(--indigoDye);
+    color: rgb(241, 236, 236);
+}
+
+.s1 {
+    background: var(--platinum);
+}
+
+/* .s2 {
+    background: var(--extrasColor);
+} */
+
+.blocks-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.blocks {
+    padding: 30px;
+}
+
+.blocks > h3 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/**********TEXT BLOCKS **********/
+.block-content {
+    border: 0.1em solid gray;
+    border-radius: 3px;
+    background: var(--ivory);
+    width: 250px;
+    line-height: 0;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 5px;
+    overflow: hidden;
+    background: var(--ivory);
+    /* font-size: 16px; */
+    line-height: 1.25;
+    font-family: 'PT Mono', monospace;
+}
+
+/********** SHIFT BLOCK **********/
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encode/Decode */
+.block-actions {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3px;
+}
+
+.block-action-item {
+    list-style-type: none;
+}
+
+.block-action {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px;
+    color: rgb(117, 115, 115);
+    font-weight: 600;
+}
+
+.block-action__active {
+    color: rgba(233, 105, 31, 0.918);
+}
+
+/* Shift values */
+.block-settings {
+    border: 0.1em solid gray;
+    border-radius: 3px;
+    background: var(--ivory);
+
+}
+
+.field-number {
+    border-bottom: 0.1em solid gray;
+    display: flex;
+}
+
+.field-label {
+    display: block;
+    align-self: flex-start;
+    border-right: solid;
+    border-color: gray;
+    border-width: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    color: var(--label);
+    padding: 5px;
+}
+
+.field-number__field {
+    display: flex;
+    justify-content: space-between;
+}
+
+.field-number__value {
+    display: block;
+    position: relative;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.field-number__input, 
+.field-number__display {
+    border: none;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    background: var(--ivory);
+}
+
+.field-number__input {
+    outline: none;
+}
+
+.field-number__display--enabled {
+    visibility: visible;
+    /* visibility: hidden; */
+}
+
+/**
+ * Get rid of the arrows in input field
+ * Source: https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp
+ */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.field-number__display-description {
+    color: rgb(117, 115, 115);
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: 0 0;
+}
+
+/* Alphabet */
+.field-text__alphabet {
+    padding: 5px;
+}
+
+.field-text__alphabet p {
+    letter-spacing: 0.02em;
+}
+
+@media screen and (max-width:800px) {
+    .blocks-wrapper {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .block-content {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .block-content {
+        width: 350px;
+    }
+}
